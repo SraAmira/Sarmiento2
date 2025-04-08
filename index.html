@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inicial-scale=1.0">
+    <title>Acordeon en HTML y CSS</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 40px;
+            background:#f9f9f9;
+            scroll-behavior: smooth;
+        }
+        .acordeon {
+            max-width: 600px;
+            margin: auto;
+        }
+        .acordeon-item {
+            margin-bottom: 10px;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgb(0,0,0.1);
+        }
+        .acordeon input {
+            display: none;
+        }
+        .acordeon-label {
+            display: block;
+            padding: 15px 20px;
+            background-color:#2600ff;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .acordeon-content {
+            max-height: 0;
+            overflow: hidden;
+            background: white;
+            padding: 0 20px;
+            transition: max-heigth 0.3s ease;
+        }
+
+        .acordeon input:checked + .acordeon-label + .acordeon-content {
+            max-height: 200px;
+            padding: 15px 20px;  
+}
+.menu{
+    position: sticky;
+    top: 0;
+    background: #2600ff;
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+}
+.menu a
+{
+   color: white;
+   text-decoration: none;
+   margin: 20px;
+   font-weight: bold;
+   transition: color 0.3s; 
+}
+.menu a:hover {
+    color: pink;
+    font-weight: 400;
+}
+    
+    </style>
+</head>
+<body>
+<div class="menu">
+    <a href="#">inicio</a>
+    <a href="#">nosotros</a>
+    <a href="#">contacto</a>
+</div>
+
+    <div class="acordeon">
+        <div class="acordeon-item">
+        <input type="checkbox" id="item1">
+        <label class="acordeon-label" for="item1">¿Qué es HTML?</label>
+        <div class="acordeon-content">
+            <p>HTML es un sistema para leer lenguaje de marcado utilizado para estucturar sitios web</p>
+        </div>
+    </div>
+    <div class="acordeon">
+        <div class="acordeon-item">                               
+        <input type="checkbox" id="item2">
+        <label class="acordeon-label" for="item2">¿Qué es CSS?</label>
+        <div class="acordeon-content">
+            <p>CSS es un lenguaje utilizado para crear estilos y compunentes interactivos sin usar javascript</p>
+        </div> 
+    </div>
+    <div class="acordeon">
+        <div class="acordeon-item">
+        <input type="checkbox" id="item3">
+        <label class="acordeon-label" for="item3">¿Puedo animar si javascript?</label>
+        <div class="acordeon-content">
+            <p>Si, utilizando componentes interactivos de CSS logras animaciones</p>
+        </div>
+    </div>
+</body>
+</html>
